@@ -46,7 +46,9 @@
 import { ref } from "vue";
 const newTodo = ref("");
 let storedTodos;
+
 localStorage.getItem("todos") ? storedTodos = JSON.parse(localStorage.getItem("todos")) : (storedTodos = []);
+
 const todos = ref(storedTodos);
 function addTodo() {
   if (newTodo.value !== "") {
@@ -70,8 +72,7 @@ function updateStorage() {
 </script>
 <style>
 .completed {
-  
+
   text-decoration: line-through;
-  color: red;
 }
 </style>
